@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+<session-factory>
+	<!-- 配置数据库连接的基本信息: -->
+	<property name="hibernate.connection.driver_class">
+		com.mysql.jdbc.Driver
+	</property>
+	<property name="hibernate.connection.url">
+		<!--jdbc:mysql:///kaoshi    此处要设置成下面这个样子，不然会乱码-->
+		<![CDATA[jdbc:mysql://localhost:3306/kaoshi?useUnicode=true&characterEncoding=utf8]]>
+	</property>
+	<!-- 用户名       密码 -->
+	<property name="hibernate.connection.username">root</property>
+	<property name="hibernate.connection.password">123</property>
+	<!-- Hibernate的方言 -->
+	<!-- 生成底层SQL不同的 -->
+	<property name="hibernate.dialect">
+		org.hibernate.dialect.MySQLDialect
+	</property>
+
+	<!-- 可选的属性 -->
+	<!-- 显示SQL -->
+	<property name="hibernate.show_sql">true</property>
+	<!-- 格式化SQL -->
+	<property name="hibernate.format_sql">true</property>
+	
+	<property name="hibernate.connection.autocommit">false</property>
+	<!-- hbm:映射 to DDL: create drop alter -->
+	<property name="hibernate.hbm2ddl.auto">update</property>
+
+
+
+	<!-- 配置Hibernate映射所在的位置 -->
+	<mapping resource="cn/entity/Good.hbm.xml" />
+
+</session-factory>
+</hibernate-configuration>
