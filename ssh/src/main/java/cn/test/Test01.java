@@ -15,12 +15,17 @@ public static void main(String[] args) {
 	SessionFactory ctory=tion.buildSessionFactory();
 	//得到会话工厂
 	Session session=ctory.openSession();
-	//对于数据的增 删 改操作需要提交事务=>通过session得到事务
-	Transaction tx=session.beginTransaction();
 	
-	//Good g=(Good) session.get(Good.class, 5);//根据主键查询信息
-	//System.out.println(g.toString());
-
+	//查询一条信息
+//Good g=(Good) session.get(Good.class, 5);
+//System.out.println(g.toString());
+	
+	
+	
+	
+	//对于数据的增 删 改操作需要提交事务=>通过session得到事务
+//Transaction tx=session.beginTransaction();
+	
 	//增加数据
 //	Good g=new Good();
 //	g.setNamee("我变强了，也变秃了");

@@ -1,6 +1,10 @@
 package cn.entity;
 
 public class Good {
+@Override
+	public String toString() {
+		return "Good [mid=" + mid + ", namee=" + namee + ", authore=" + authore + ", typee=" + typee + "]";
+	}
 private int mid;
 private String namee;
 private String authore;
