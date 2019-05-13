@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 引入约束 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+<!-- name 对应的实体类名称
+     table  对应的数据库表名称
+     catalog  数据库的名称
+ -->
+	<class name="cn.entity.Good" table="bookmanage" catalog="kaoshi">
+	<!-- id标签    主键
+	     name  实体类中对应的主键名称
+	     column   数据库中的主键名称
+	     type   对应的类型
+	     length  长度
+	 -->
+		<id name="mid" column="mid">
+		<!-- 自增长 -->
+			<generator class="identity"/>
+		</id>
+		<!-- 表中的其他成员 -->
+		<property name="namee" column="namee" type="string" length="50"/>
+		<property name="authore" column="authore" type="string" length="50"/>
+		<property name="typee" column="typee"/>
+	</class>
+</hibernate-mapping>
