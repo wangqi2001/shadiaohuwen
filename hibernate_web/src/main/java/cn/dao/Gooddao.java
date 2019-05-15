@@ -22,6 +22,12 @@ public void add(Good good);
  */
 public void delete(Good good);
 /**
+ * 根据id查询特定的数据
+ * @param dao
+ * @return
+ */
+public List<Good> flii(int a);
+/**
  * 修改数据
  * @param good
  */

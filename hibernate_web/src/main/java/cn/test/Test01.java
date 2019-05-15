@@ -11,6 +11,10 @@ import cn.entity.Good;
 public class Test01 {
 public static void main(String[] args) {
 	ApplicationContext li=new ClassPathXmlApplicationContext("beans.xml");
+	String[]a=li.getBeanDefinitionNames();
+	for (String string : a) {
+		System.out.println(string);
+	}
 	Gooddao dao=(Gooddao) li.getBean("gooddaoimp");
 //	Good good=new Good();
 //	good.setNamee("我变强了，也变秃了");
@@ -18,8 +22,8 @@ public static void main(String[] args) {
 //	good.setTypee(2);
 //	dao.add(good);
 	
-//	List<Good> list=dao.fli();
-//	System.out.println(list);
+	List<Good> list=dao.fli();
+	System.out.println(list);
 	
 //	Good good=new Good();
 //	good.setMid(10);

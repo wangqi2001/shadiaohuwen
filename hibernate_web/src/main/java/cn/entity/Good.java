@@ -2,7 +2,6 @@ package cn.entity;
 
 import org.hibernate.annotations.Entity;
 
-@Entity
 public class Good {
 	private int mid;
 	private String namee;

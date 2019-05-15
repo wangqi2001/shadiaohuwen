@@ -1,6 +1,5 @@
 package cn.dao.imp;
 
-import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,24 +12,28 @@ import cn.entity.Good;
 @Component
 public class Gooddaoimp implements Gooddao{
 	@Autowired
-private HibernateTemplate hli;
+private HibernateTemplate hibernateTemplate;
 	
 	@Override
 	public List<Good> fli() {
-		return hli.find("from Good");
+		return hibernateTemplate.find("from Good");
 	}
 	@Override
 	public void add(Good good) {
 		// TODO Auto-generated method stub
-		hli.save(good);
+		hibernateTemplate.save(good);
 	}
 	@Override
 	public void delete(Good good) {
 		// TODO Auto-generated method stub
-		hli.delete(good);
+		hibernateTemplate.delete(good);
 	}
 	@Override
 	public void update(Good good) {
-		hli.update(good);
+		hibernateTemplate.update(good);
+	}
+	@Override
+	public List<Good> flii(int a) {
+		return hibernateTemplate.find("from Good where mid="+a);
 	}
 }
